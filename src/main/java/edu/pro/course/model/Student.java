@@ -8,12 +8,17 @@ package edu.pro.course.model;
   @since 03.02.2021 - 12.27
 */
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Document
 public class Student extends Audit{
     // !!!!
+    @Id
     private String id;
     private String name;
     private LocalDate dateOfBirth;
@@ -42,7 +47,13 @@ public class Student extends Audit{
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Groupp getGroupp() {
+        return groupp;
+    }
 
+    public void setGroupp(Groupp groupp) {
+        this.groupp = groupp;
+    }
 
     public String getId() {
         return id;
