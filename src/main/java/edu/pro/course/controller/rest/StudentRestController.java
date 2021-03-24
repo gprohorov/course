@@ -2,6 +2,9 @@ package edu.pro.course.controller.rest;
 
 import edu.pro.course.model.Student;
 import edu.pro.course.service.student.impls.StudentServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +20,7 @@ import java.util.List;
   @version  1.0.0 
   @since 03.02.2021 - 12.16
 */
+@Tag(name = " Strudent controller API", description = "Detailed description")
 @RestController
 @RequestMapping("api/students")
 public class StudentRestController {
@@ -30,7 +34,10 @@ public class StudentRestController {
     }
 
     @GetMapping("/get/{id}")
-    public Student getById(@PathVariable("id") String id ){
+    public Student getById(@PathVariable("id")
+                               @Parameter(name = " Student Id",
+                                       description = " Warning! It is not a cardId! " )
+                                       String id ){
         return service.getById(id);
     }
 
@@ -39,6 +46,7 @@ public class StudentRestController {
         return service.delete(id);
     }
 
+    @Operation(summary = " Student creation", description = " Id to be created is UUID type")
     @PostMapping("/create/")
     public Student create(@RequestBody Student student){
         return service.create(student);

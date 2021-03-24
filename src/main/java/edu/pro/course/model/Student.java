@@ -8,29 +8,34 @@ package edu.pro.course.model;
   @since 03.02.2021 - 12.27
 */
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.bind.annotation.RequestPart;
 
+import javax.validation.constraints.Min;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
-
+@Schema(description = " Studenr Document? Entity ")
 @Document
 public class Student extends Audit{
     // !!!!
     @Id
     private String id;
+    @Schema(description = " Full name ", defaultValue = " Johm")
     private String name;
     private LocalDate dateOfBirth;
     private Groupp groupp;
+    private final LocalDate min = LocalDate.now();
 
-
+      private String yyy;
 
     //!!!!!!
     public Student() {
     }
 
-    public Student(String id, String name, LocalDate dateOfBirth) {
+    public Student(String id, String name,           LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;

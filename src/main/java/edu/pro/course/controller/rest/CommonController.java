@@ -1,6 +1,7 @@
 package edu.pro.course.controller.rest;
 
 import edu.pro.course.model.Student;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
   @version  1.0.0 
   @since 03.02.2021 - 12.16
 */
+@Hidden
 @RestController
 public class CommonController {
 
