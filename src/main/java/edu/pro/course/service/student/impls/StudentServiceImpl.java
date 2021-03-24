@@ -83,6 +83,7 @@ public class StudentServiceImpl implements IStudentService {
 
     public List<Student> recruits(){
         LocalDate date = LocalDate.now().minusYears(18);
-        return repository.findAllByDateOfBirthAfter(date);
+     //   return repository.findAllByDateOfBirthAfter(date);
+        return null;
     }
 }
