@@ -1,7 +1,10 @@
 package edu.pro.course.dao.groupp.impls;
 
 import edu.pro.course.dao.groupp.interfaces.IGrouppDAO;
+import edu.pro.course.data.FakeData;
 import edu.pro.course.model.Groupp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,10 +14,23 @@ import java.util.List;
   @class  GrouppDAOImpl
   @version  1.0.0 
   @since 18.02.2021 - 13.48
-*/public class GrouppDAOImpl implements IGrouppDAO {
+*/
+@Repository
+public class GrouppDAOImpl implements IGrouppDAO {
+
+    @Autowired
+    FakeData fakeData;
+
     @Override
     public Groupp getById(String id) {
-        return null;
+        return this.getAll().stream().filter(item -> item.getId().equals(id))
+                .findFirst().orElse(null);
+    }
+
+
+    public Groupp getByName(String name) {
+        return this.getAll().stream().filter(item -> item.getName().equals(name))
+                .findFirst().orElse(null);
     }
 
     @Override
@@ -34,6 +50,6 @@ import java.util.List;
 
     @Override
     public List<Groupp> getAll() {
-        return null;
+        return fakeData.getGroupps();
     }
 }

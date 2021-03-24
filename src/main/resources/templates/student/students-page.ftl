@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +9,15 @@
 <body>
 <h1> Hello Students</h1>
 
+
+
 <div style="width: 800px; margin: 0 auto;">
     <table class="table table-success table-striped">
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Date of birth</th>
+            <th>Group</th>
             <th>Delete</th>
 
         </tr>
@@ -22,11 +26,13 @@
                 <td>${student.id}</td>
                 <td>${student.name}</td>
                 <td>${student.dateOfBirth}</td>
+                <td>${student.groupp.name}</td>
                 <td><a href="/ui/students/delete/${student.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
 
             </tr>
         </#list>
     </table>
+    <a class="btn btn-success" href="/ui/students/create">Create</a>
 </div>
 
 

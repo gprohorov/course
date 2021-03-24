@@ -20,6 +20,12 @@ public class Student extends Audit{
     private Groupp groupp;
 
 
+    public Student(String id, String name, LocalDate dateOfBirth, Groupp groupp) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.groupp = groupp;
+    }
 
     //!!!!!!
     public Student() {
@@ -42,7 +48,13 @@ public class Student extends Audit{
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Groupp getGroupp() {
+        return groupp;
+    }
 
+    public void setGroupp(Groupp groupp) {
+        this.groupp = groupp;
+    }
 
     public String getId() {
         return id;
@@ -87,6 +99,7 @@ public class Student extends Audit{
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
+                ", groupp=" + groupp +
                 '}';
     }
 }
