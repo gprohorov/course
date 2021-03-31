@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +24,13 @@ public class StudentRestController {
 
     @Autowired
     StudentServiceImpl service;
+
+    List<Student> students = new ArrayList<>(
+            Arrays.asList(
+                    new Student("1", "Ivan", LocalDate.of(2000, Month.AUGUST,1)),
+                    new Student("2", "Petro", LocalDate.of(2001, Month.AUGUST,1))
+            )
+    );
 
     @RequestMapping("/get/all")
     public List<Student> getStudents(){
