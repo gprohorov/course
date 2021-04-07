@@ -23,6 +23,7 @@ public class Student extends Audit{
     private String name;
     private LocalDate dateOfBirth;
     private Groupp groupp;
+    private int mark;
 
 
 
@@ -45,6 +46,21 @@ public class Student extends Audit{
         public Student(String name, LocalDate dateOfBirth) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Student(String id, String name, LocalDate dateOfBirth, Groupp groupp, int mark) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.groupp = groupp;
+        this.mark = mark;
+    }
+
+    public Student(String name, LocalDate dateOfBirth, Groupp groupp, int mark) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.groupp = groupp;
+        this.mark = mark;
     }
 
     public Groupp getGroupp() {
@@ -79,6 +95,14 @@ public class Student extends Audit{
         this.dateOfBirth = dateOfBirth;
     }
 
+    public int getMark() {
+        return mark;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,6 +122,8 @@ public class Student extends Audit{
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
+                ", groupp=" + groupp +
+                ", mark=" + mark +
                 '}';
     }
 }

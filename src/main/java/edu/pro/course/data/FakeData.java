@@ -35,10 +35,10 @@ public class FakeData {
 
             Arrays.asList(
 
-                    new Student( "John Lennon", LocalDate.of(1970,1,1), groupps.get(0)),
-                    new Student("2", "Freddie Mercury", LocalDate.of(1960,3,1)),
-                    new Student("3", "Ozzy Osborne", LocalDate.of(1953,12,4)),
-                    new Student("Britney Spears", LocalDate.of(1980,12,4))
+                    new Student( "John Lennon", LocalDate.of(1970,1,1), groupps.get(0), 100),
+                    new Student("2", "Freddie Mercury", LocalDate.of(1960,3,1), groupps.get(1), 90),
+                    new Student("3", "Ozzy Osborne", LocalDate.of(1953,12,4), groupps.get(1), 88),
+                    new Student("Britney Spears", LocalDate.of(1980,12,4), groupps.get(0), 50)
             )
     );
 
