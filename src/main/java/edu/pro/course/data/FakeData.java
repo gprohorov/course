@@ -10,6 +10,7 @@ package edu.pro.course.data;
 */
 
 
+import edu.pro.course.model.Groupp;
 import edu.pro.course.model.Student;
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +22,14 @@ import java.util.List;
 
 @Repository
 public class FakeData {
+
+    private List<Groupp> groupps = new ArrayList<>(
+            Arrays.asList(
+                    new Groupp("1","243/1","Software Engineering"),
+                    new Groupp("2","243/M","Software Engineering")
+            )
+
+    );
 
     private List<Student> students = new ArrayList<>(
 
@@ -39,5 +48,13 @@ public class FakeData {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public List<Groupp> getGroupps() {
+        return groupps;
+    }
+
+    public void setGroupps(List<Groupp> groupps) {
+        this.groupps = groupps;
     }
 }

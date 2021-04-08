@@ -1,20 +1,27 @@
-package edu.pro.course.dao.groupp.impls;
-
-import edu.pro.course.dao.groupp.interfaces.IGrouppDAO;
-import edu.pro.course.model.Groupp;
-
-import java.util.List;
-
+package edu.pro.course.dao.groupp.interfaces;
 /*
   @author   george
   @project   course
-  @class  GrouppDAOImpl
+  @class  IGrouppDAOMySQLImpl
   @version  1.0.0 
-  @since 18.02.2021 - 13.48
-*/public class GrouppDAOImpl implements IGrouppDAO {
+  @since 07.04.2021 - 09.32
+*/
+
+import edu.pro.course.data.FakeData;
+import edu.pro.course.model.Groupp;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
+public class IGrouppDAOMySQLImpl implements IGrouppDAO {
+
+    @Autowired
+    FakeData defaults;
 
 
+    private void saveDefaults(){
 
+    }
     @Override
     public Groupp getById(String id) {
         return null;
